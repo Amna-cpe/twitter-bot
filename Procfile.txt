@@ -1,1 +1,1 @@
-worker:python Mathayel_bot.py
+worker: python Mathayel_bot.py
