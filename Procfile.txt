@@ -1,1 +1,1 @@
-worker: python Mathayel_bot.py
+web: python Mathayel_bot.py runserver
