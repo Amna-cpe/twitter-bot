@@ -36,7 +36,7 @@ def tweet_with_rand_img(url):
         with open(filename, 'wb') as image:
             for chunk in request:
                 image.write(chunk)
-        status = "@mathayelMF You can do it you almost there"
+        status = "@mathayelMF مو كفو تحفيز"
         api.update_with_media(filename, status)
         os.remove(filename)
     else:
