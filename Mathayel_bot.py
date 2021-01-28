@@ -45,9 +45,9 @@ def tweet_with_own_img():
     api.update_with_media(filename, status)
 
 
-url = get_random_img()
 
 def job():
+    url = get_random_img()
     tweet_with_own_img(url)
     print("I'm working...")
 
