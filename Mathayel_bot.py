@@ -17,9 +17,6 @@ auth.set_access_token(ACCESS_TOKEN , ACCESS_TOKEN_SECRET)
 
 api = tweepy.API(auth)
 
-status = "@mathayelMF You can do it you almost there"
-
-
 def get_random_img():
     with open('data.json') as f:
         data = json.load(f)
@@ -42,11 +39,16 @@ def tweet_with_rand_img(url):
     else:
         print("Unable to download image")
 
+def tweet_with_own_img():
+    status = "@mathayelMF مو كفو تحفيز"
+    filename='end.jpg'
+    api.update_with_media(filename, status)
+
 
 url = get_random_img()
 
 def job():
-    tweet_with_rand_img(url)
+    tweet_with_own_img(url)
     print("I'm working...")
 
 
