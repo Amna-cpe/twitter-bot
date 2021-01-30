@@ -40,7 +40,7 @@ def tweet_with_rand_img(url):
         print("Unable to download image")
 
 def tweet_with_own_img():
-    status = " مو كفو تحفيز"
+    status = "@mathayelMF مو كفو تحفيز"
     filename='end.jpg'
     api.update_with_media(filename, status)
 
