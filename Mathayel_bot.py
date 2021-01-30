@@ -12,6 +12,7 @@ API_SECRET= environ['API_SECRET']
 ACCESS_TOKEN  = environ['ACCESS_TOKEN']
 ACCESS_TOKEN_SECRET = environ['ACCECC_TOKEN_SECRET']
 
+
 auth = tweepy.OAuthHandler(API_KEY , API_SECRET)
 auth.set_access_token(ACCESS_TOKEN , ACCESS_TOKEN_SECRET)
 
@@ -25,8 +26,7 @@ def get_random_img():
     return world
    
 
-def tweet_with_rand_img(url):
-   
+def tweet_with_rand_img(url):   
     filename = 'temp.jpg'
     request = requests.get(url, stream=True)
     if request.status_code == 200:
@@ -40,7 +40,7 @@ def tweet_with_rand_img(url):
         print("Unable to download image")
 
 def tweet_with_own_img():
-    status = "@mathayelMF مو كفو تحفيز"
+    status = " مو كفو تحفيز"
     filename='end.jpg'
     api.update_with_media(filename, status)
 
@@ -48,7 +48,7 @@ def tweet_with_own_img():
 
 def job():
     url = get_random_img()
-    tweet_with_own_img(url)
+    tweet_with_own_img()
     print("I'm working...")
 
 
