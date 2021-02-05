@@ -33,7 +33,7 @@ def tweet_with_rand_img(url):
         with open(filename, 'wb') as image:
             for chunk in request:
                 image.write(chunk)
-        status = "@mathayelMF مو كفو تحفيز"
+        status = "@mathayelMF You can do it you almost there"
         api.update_with_media(filename, status)
         os.remove(filename)
     else:
@@ -48,7 +48,7 @@ def tweet_with_own_img():
 
 def job():
     url = get_random_img()
-    tweet_with_own_img()
+    tweet_with_rand_img(url)
     print("I'm working...")
 
 
