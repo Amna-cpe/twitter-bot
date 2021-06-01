@@ -13,6 +13,38 @@ API_SECRET= "L3YX4CnZFoyMFyepIjP65GyUfyDjGXsRkNeMfNB35vkdEtB1wt"
 ACCESS_TOKEN  = "1349122191040905223-DvYa0ei0ie3uuc01mQoheCGebWOeGm"
 ACCESS_TOKEN_SECRET = "kfWkSyiz6Jv1sLpRR9DfMBBptCiEnRzhuHfq3OuL8WJ8B"
 
+ def sendMail(name, email, msg):
+
+    accesToken =  oAuthClient.getAccessToken();
+
+    transport = nodemailer.createTransport({
+    service: "gmail",
+    auth: {
+    type: "OAuth2",
+    user: "amna.the.nerdy@gmail.com",
+    clientId: CLIENT_ID,
+    clientSecret: CLIENT_SECRET,
+    refreshToken: REF_TOKEN,
+    accessToken: accesToken,
+    },
+    });
+
+     mailOptions = {
+    from: `${name}`,
+    to: "amna.the.nerdy@gmail.com",
+    subject: "from portfolio",
+    html: `<p>from:${email} <br> ${msg}</p>`,
+    };
+
+     result =  transport.sendMail(mailOptions);
+
+    return result;
+ 
+
+
+
+
+
 
 auth = tweepy.OAuthHandler(API_KEY , API_SECRET)
 auth.set_access_token(ACCESS_TOKEN , ACCESS_TOKEN_SECRET)
