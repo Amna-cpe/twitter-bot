@@ -41,8 +41,7 @@ def batch_delete():
             print("Failed to delete:", status.id)
 
 def job():
-    Get_All_Athkar()
-   
+    Get_All_Athkar()   
     print("I'm working...")
 
 
